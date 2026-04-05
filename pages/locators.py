@@ -19,3 +19,7 @@ class ProductPageLocators():
     ADD_TO_BASKET_MESSAGE_EXTRACTION = "return arguments[0].querySelector('strong').nextSibling.textContent.trim();"
 
     BASKET_AMOUNT = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
