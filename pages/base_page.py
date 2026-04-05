@@ -60,3 +60,11 @@ class BasePage():
 
     def go_to_basket(self):
         self.browser.find_element(*BasePageLocators.BASKET).click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
+    def generate_random_email(self):
+        username = ''.join(random.choices(string.ascii_lowercase, k=8))
+        domain = ''.join(random.choices(string.ascii_lowercase, k=5))
+        return f"{username}@{domain}.com"

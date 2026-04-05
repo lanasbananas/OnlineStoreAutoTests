@@ -7,6 +7,10 @@ class MainPageLocators():
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    REGISTER_EMAIL_INPUT = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTER_PASSWORD_INPUT = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTER_PASSWORD_INPUT_AGAIN = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "#register_form > button")
 
 class ProductPageLocators():
     ADD_TO_BASKET = (By.CSS_SELECTOR, "#add_to_basket_form > button")
@@ -26,3 +30,4 @@ class BasePageLocators():
     BASKET = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
     BASKET_MESSAGE = (By.XPATH, '//*[@id="content_inner"]/p')
     EMPTY_BASKET_MESSAGE_EXTRACTION = "return arguments[0].childNodes[0].textContent.trim();"
+    USER_ICON = (By.CSS_SELECTOR, "#top_page > div.navbar-collapse.account-collapse.collapse > div > ul > li:nth-child(1) > a")
