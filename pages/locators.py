@@ -23,3 +23,6 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+    BASKET_MESSAGE = (By.XPATH, '//*[@id="content_inner"]/p')
+    EMPTY_BASKET_MESSAGE_EXTRACTION = "return arguments[0].childNodes[0].textContent.trim();"
