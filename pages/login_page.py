@@ -3,6 +3,9 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
+    def should_be_login_form(self):
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Missing login form"
+
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()
@@ -10,10 +13,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         login_url = self.browser.current_url
-        assert "login" in login_url, f"Uncorrect url. Got {login_url}"
-
-    def should_be_login_form(self):
-        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Missing login form"
+        assert "login" in login_url, f"Incorrect url. Got: {login_url}, expected: url ended with 'login'"
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Missing register form"
@@ -30,6 +30,3 @@ class LoginPage(BasePage):
 
         submit_button = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
         submit_button.click()
-
-
-
